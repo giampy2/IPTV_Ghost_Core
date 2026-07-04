@@ -31,7 +31,13 @@ def main():
             print(f"[ERR] Sorgente FALLITA: {source[:60]}... Errore: {str(e)[:50]}")
 
     # Scrivi la playlist combinata nel file locale
-    with open('playlist.m3u', 'w', encoding='utf-8') as f:
+    # Assicurati che la cartella public esista o usa la radice
+    if not os.path.exists('public'):
+        os.makedirs('public')
+        
+    # Scrivi nella cartella che Netlify preferisce spesso
+    with open('public/playlist.m3u', 'w', encoding='utf-8') as f:
+        f.write(combined_content)
         f.write(combined_content)
         
     total_channels = combined_content.count('http')
