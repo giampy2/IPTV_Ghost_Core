@@ -1,0 +1,8 @@
+[build]
+  command = "python update_playlist.py"
+  publish = "."
+
+[[redirects]]
+  from = "/playlist.m3u"
+  to = "/playlist.m3u"
+  status = 200
