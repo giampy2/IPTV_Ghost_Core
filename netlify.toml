@@ -1,6 +1,10 @@
 [build]
+  # Installa requests e poi lancia lo script
   command = "pip install requests && python update_playlist.py"
+  # Pubblica tutto ciò che è nella cartella root (dove il file playlist.m3u viene creato)
   publish = "."
 
-[context.production.environment]
-  PYTHON_VERSION = "3.8"
+[[redirects]]
+  from = "/*"
+  to = "/playlist.m3u"
+  status = 200
