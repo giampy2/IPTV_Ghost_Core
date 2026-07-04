@@ -1,6 +1,6 @@
 [build]
   command = "python update_playlist.py"
-  publish = "."
+  publish = "public"
   
 [[plugins]]
   package = "netlify-plugin-cache"
