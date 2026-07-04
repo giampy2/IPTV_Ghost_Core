@@ -1,11 +1,6 @@
 [build]
-  command = "python update_playlist.py"
-  publish = "public"
-  
-[[plugins]]
-  package = "netlify-plugin-cache"
+  command = "pip install requests && python update_playlist.py"
+  publish = "."
 
-[[redirects]]
-  from = "/playlist.m3u"
-  to = "/playlist.m3u"
-  status = 200
+[context.production.environment]
+  PYTHON_VERSION = "3.8"
