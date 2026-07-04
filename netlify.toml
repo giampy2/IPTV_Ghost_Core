@@ -1,6 +1,9 @@
 [build]
   command = "python update_playlist.py"
   publish = "."
+  
+[[plugins]]
+  package = "netlify-plugin-cache"
 
 [[redirects]]
   from = "/playlist.m3u"
